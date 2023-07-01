@@ -1,24 +1,39 @@
 * {
 	border: 1px solid black;
 	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-	height: 100vh;
 	display: grid;
 	justify-content: center;
 	align-items: center;
 }
 
+
 .container {
+	height: 100vh;
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(6, 1fr);
+	align-content: center;
+	grid-template-columns: repeat(4, 100px);
+	grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }
 
 .output {
-	grid-column: span 4;
-	text-align: right;
+	grid-column: 1 / -1;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.current-operand {
+	font-size: 40px;
+}
+
+.previous-operand {
+	font-size: 20px;
 }
 
 .span-two {
