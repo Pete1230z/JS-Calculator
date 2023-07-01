@@ -1,23 +1,26 @@
 * {
 	border: 1px solid black;
 	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
-
-html {
-	height: 100%;
 }
 
 body {
-    height: 100%;
+	height: 100vh;
 	display: grid;
-	justify-items: center;
+	justify-content: center;
 	align-items: center;
 }
 
 .container {
-	height: 50%;
-	width: 30%;
-	border: 4px solid black;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(6, 1fr);
+}
+
+.output {
+	grid-column: span 4;
+	text-align: right;
+}
+
+.span-two {
+	grid-column: span 2;
 }
