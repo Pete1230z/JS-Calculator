@@ -23,7 +23,7 @@ class Calculator {
 	}
 
 	appendNumber(number) {
-		
+		this.currentOperand = number
 	}
 
 	chooseOperation(operation) {
@@ -35,15 +35,15 @@ class Calculator {
 	}
 
 	updateDisplay() {
-
+		this.currentOperandTextElement.innerText = this.currentOperand
 	}
 }
 
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
 
-number.forEach(button, function() {
+number.forEach(function(button) {
 	button.addEventListener('click', function() {
-		calculator.appendNumber(number)
+		calculator.appendNumber(button.innerText)
 		calculator.updateDisplay()
 	})
 })
