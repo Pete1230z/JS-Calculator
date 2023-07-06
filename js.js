@@ -24,6 +24,7 @@ class Calculator {
 	}
 
 	appendNumber(number) {
+		if (this.currentOperand.includes('.') && number === '.') return
 		this.currentOperand = this.currentOperand + number
 		console.log(this.currentOperand)
     }
