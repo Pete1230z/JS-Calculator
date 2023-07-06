@@ -10,6 +10,7 @@ class Calculator {
 	constructor(previousOperandTextElement, currentOperandTextElement) {
 		this.previousOperandTextElement = previousOperandTextElement
 		this.currentOperandTextElement = currentOperandTextElement
+		this.currentOperand = ''
 	}
 
 	clear() {
@@ -23,8 +24,9 @@ class Calculator {
 	}
 
 	appendNumber(number) {
-		this.currentOperand = number
-	}
+		this.currentOperand = this.currentOperand + number
+		console.log(this.currentOperand)
+    }
 
 	chooseOperation(operation) {
 
@@ -39,6 +41,7 @@ class Calculator {
 	}
 }
 
+
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
 
 number.forEach(function(button) {
@@ -47,3 +50,4 @@ number.forEach(function(button) {
 		calculator.updateDisplay()
 	})
 })
+
