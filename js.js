@@ -10,7 +10,7 @@ class Calculator {
 	constructor(previousOperandTextElement, currentOperandTextElement) {
 		this.previousOperandTextElement = previousOperandTextElement
 		this.currentOperandTextElement = currentOperandTextElement
-		this.currentOperand = ''
+		this.clear()
 	}
 
 	clear() {
@@ -30,7 +30,7 @@ class Calculator {
     }
 
 	chooseOperation(operation) {
-
+        this.operation = operation
 	}
 
 	compute() {
@@ -39,6 +39,8 @@ class Calculator {
 
 	updateDisplay() {
 		this.currentOperandTextElement.innerText = this.currentOperand
+		this.operation = this.operation
+		console.log(this.operation)
 	}
 }
 
@@ -52,3 +54,13 @@ number.forEach(function(button) {
 	})
 })
 
+operand.forEach(function(button) {
+	button.addEventListener('click', function() {
+		calculator.chooseOperation(button.innerText)
+		calculator.updateDisplay()
+	})
+})
+
+allClear.addEventListener('click', function() {
+	calculator.clear()
+})
