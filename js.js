@@ -41,7 +41,18 @@ class Calculator {
 	}
 
 	compute() {
-       
+		const prev = parseFloat(this.previousOperand)
+		const current = parseFloat(this.currentOperand)
+
+       if (this.operation === '÷') {
+		this.currentOperand = prev / current
+	   } else if (this.operation === '*') {
+        this.currentOperand = prev * current
+	   } else if (this.operation === '+') {
+		this.currentOperand = prev + current
+	   } else if (this.operation === '-') {
+		this.currentOperand = prev - current
+	   }
 	}
 
 	updateDisplay() {
