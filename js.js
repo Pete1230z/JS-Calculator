@@ -20,7 +20,7 @@ class Calculator {
 	}
 
 	delete() {
-
+		this.currentOperand = this.currentOperand.toString().slice(0, -1)
 	}
 
 	appendNumber(number) {
@@ -32,14 +32,16 @@ class Calculator {
 	chooseOperation(operation) {
         if (this.currentOperand === '') return
 		if (this.previousOperand !== '') {
+			this.compute()
 		}
 		this.operation = operation
 		this.previousOperand = this.currentOperand
 		this.currentOperand = ''
+		console.log(operation)
 	}
 
 	compute() {
-
+       
 	}
 
 	updateDisplay() {
@@ -63,6 +65,11 @@ operand.forEach(function(button) {
 		calculator.chooseOperation(button.innerText)
 		calculator.updateDisplay()
 	})
+})
+
+del.addEventListener('click', function() {
+	calculator.delete()
+	calculator.updateDisplay()
 })
 
 allClear.addEventListener('click', function() {
