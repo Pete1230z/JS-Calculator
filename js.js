@@ -74,4 +74,5 @@ del.addEventListener('click', function() {
 
 allClear.addEventListener('click', function() {
 	calculator.clear()
+	calculator.updateDisplay()
 })
