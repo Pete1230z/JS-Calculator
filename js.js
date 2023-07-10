@@ -2,7 +2,7 @@ const allClear = document.querySelector('[data-all-clear]');
 const del = document.querySelector('[data-delete]');
 const number = document.querySelectorAll('[data-number]');
 const operand = document.querySelectorAll('[data-operand]');
-const equals = document.querySelectorAll('[data-equals]');
+const equals = document.querySelector('[data-equals]');
 const previousOperandTextElement = document.querySelector('[data-previous-operand]');
 const currentOperandTextElement = document.querySelector('[data-current-operand]');
 
@@ -55,6 +55,13 @@ class Calculator {
 	   }
 	}
 
+	equal() {
+        this.compute()
+		this.previousOperand = ''
+		this.operation = undefined
+		console.log(this.currentOperand)
+	}
+
 	updateDisplay() {
 		this.currentOperandTextElement.innerText = this.currentOperand
 		this.previousOperandTextElement.innerText = this.previousOperand
@@ -85,5 +92,10 @@ del.addEventListener('click', function() {
 
 allClear.addEventListener('click', function() {
 	calculator.clear()
+	calculator.updateDisplay()
+})
+
+equals.addEventListener('click', function() {
+    calculator.equal()
 	calculator.updateDisplay()
 })

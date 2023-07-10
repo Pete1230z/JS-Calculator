@@ -17,7 +17,8 @@ body {
 	display: grid;
 	align-content: center;
 	grid-template-columns: repeat(4, 100px);
-	grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+	grid-template-rows: minmax(120px, auto) repeat(6, 100px);
+	word-break: break-word;
 }
 
 .container > button {
@@ -38,6 +39,7 @@ body {
 .output {
 	grid-column: 1 / -1;
 	display: flex;
+	overflow-wrap: break-word;
 	justify-content: space-around;
 	flex-direction: column;
 	align-items: flex-end;
