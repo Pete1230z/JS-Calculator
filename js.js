@@ -63,8 +63,8 @@ class Calculator {
 	}
 
 	updateDisplay() {
-		this.currentOperandTextElement.innerText = this.currentOperand
-		this.previousOperandTextElement.innerText = this.previousOperand
+		this.currentOperandTextElement.innerText = parseFloat(this.currentOperand).toLocaleString("en-US")
+		this.previousOperandTextElement.innerText = parseFloat(this.previousOperand).toLocaleString("en-US")
 	}
 }
 
