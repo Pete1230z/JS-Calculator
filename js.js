@@ -16,9 +16,9 @@ class Calculator {
 	clear() {
 		this.currentOperand = ''
 		this.previousOperand = ''
-		this.operation = undefined
+		this.operation = ''
 	}
-
+	
 	delete() {
 		this.currentOperand = this.currentOperand.slice(0, -1)
 	}
@@ -64,7 +64,13 @@ class Calculator {
 
 	updateDisplay() {
 		this.currentOperandTextElement.innerText = parseFloat(this.currentOperand).toLocaleString("en-US")
-		this.previousOperandTextElement.innerText = parseFloat(this.previousOperand).toLocaleString("en-US")
+		if (isNaN(parseFloat(this.currentOperand))) {
+			this.currentOperandTextElement.innerText = ''
+		}
+		this.previousOperandTextElement.innerText = parseFloat(this.previousOperand).toLocaleString("en-US") + this.operation
+		if (isNaN(parseFloat(this.previousOperand))) {
+			this.previousOperandTextElement.innerText = ''
+		}
 	}
 }
 
